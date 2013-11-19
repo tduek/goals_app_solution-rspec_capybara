@@ -5,7 +5,7 @@ describe User do
     let(:empty_user) { User.new }
 
     it "has a session_token anyways" do
-      expect(empty_user).to_not be(nil)
+      expect(empty_user.session_token).to_not be(nil)
     end
 
     it "validates presence of username" do
@@ -14,10 +14,10 @@ describe User do
   end
 
   context "with a username" do
-    let(:user) { User.new }
+    let(:valid_user) { User.new(username: "Tommy") }
 
     it "is valid" do
-      expect(user).to be_valid
+      expect(valid_user).to be_valid
     end
   end
 end
