@@ -4,4 +4,9 @@ class Goal < ActiveRecord::Base
   validates :title, :description, presence: true
 
   belongs_to :user, class_name: "User", foreign_key: :user_id, primary_key: :id
+
+  def mark_completed!
+    self.is_completed = true
+    self.save
+  end
 end
