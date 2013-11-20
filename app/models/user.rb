@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   attr_accessible :session_token, :username, :password
 
   after_initialize :ensure_session_token
-
   validates :username, presence: true
 
   has_many :goals, class_name: "Goal", foreign_key: :user_id, primary_key: :id
