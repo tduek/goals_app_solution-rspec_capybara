@@ -2,9 +2,22 @@
 
 FactoryGirl.define do
   factory :goal do
-    title "MyString"
-    description "MyText"
-    user_id 1
+    title Faker::Lorem.sentence
+    description Faker::Lorem.paragraph
     is_private false
+    is_completed false
+
+    factory :private_goal do
+      is_private true
+    end
+
+    factory :completed_goal do
+      is_completed true
+    end
+
+    factory :completed_private_goal do
+      is_completed true
+      is_private true
+    end
   end
 end
