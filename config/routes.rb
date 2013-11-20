@@ -3,7 +3,13 @@ GoalsApp::Application.routes.draw do
 
   resources :users
 
-  resource :session, only: [:create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
+
+  resources :goals do
+    member do
+      put :mark_completed
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

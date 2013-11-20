@@ -1,0 +1,9 @@
+<form action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token"
+                      value="<%= form_authenticity_token %>">
+
+  <input id="username" type="text" name="username">
+  <input id="password" type="password" name="password">
+
+  <input type="submit" name="commit" value="Log in">
+</form>
