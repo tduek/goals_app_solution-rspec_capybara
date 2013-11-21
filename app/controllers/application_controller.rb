@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def require_user_with_permission
     @goal = Goal.find(params[:id])
 
-    if !(logged_in? && @goal.user_id == current_user.id) || @goal.is_private?
+    unless (logged_in? && @goal.user_id == current_user.id) || !@goal.is_private?
       redirect_to new_session_url, alert: "You don't have permission for that!"
     end
   end

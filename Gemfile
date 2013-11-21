@@ -8,7 +8,7 @@ gem 'rails', '3.2.14'
 gem 'sqlite3'
 
 gem 'bcrypt-ruby', require: 'bcrypt'
-
+gem 'debugger'
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
